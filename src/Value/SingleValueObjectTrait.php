@@ -37,6 +37,11 @@ trait SingleValueObjectTrait /* implements SingleValueObjectInterface */
         return $this->value;
     }
 
+   final public function toArray(): array
+    {
+        return [$this->getValue()];
+    }
+
     final public function __toString(): string
     {
         return (string)$this->value;

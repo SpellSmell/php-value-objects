@@ -34,4 +34,6 @@ interface SingleValueObjectInterface
     public function getValue();
 
     public function __toString(): string;
+
+    public function toArray(): array;
 }
