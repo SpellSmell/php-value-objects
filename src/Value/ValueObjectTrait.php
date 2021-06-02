@@ -58,10 +58,12 @@ trait ValueObjectTrait
         throw ValueObjectException::cannotMutate(ClassType::of(static::class));
     }
 
-    final public function __wakeup()
-    {
-        throw ValueObjectException::cannotUnserialize(ClassType::of(static::class));
-    }
+    // в определенных местах приложения мы кешируем обьект, и это ограничение вызывает ошибку в проложении
+    // TODO обсудить как быть, и что с перечисленных методов оставить в текущем трейте
+//    final public function __wakeup()
+//    {
+//        throw ValueObjectException::cannotUnserialize(ClassType::of(static::class));
+//    }
 
     final public static function __set_state($an_array)
     {
